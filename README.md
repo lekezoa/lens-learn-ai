@@ -2,7 +2,7 @@
 
 > Point your phone or camera at any rock, landscape, plant, architecture, or machine to learn what you see. Built for Pollinations AI Quest [#20023](https://github.com/pollinations/pollinations/issues/20023).
 
-[![Made with pollinations.ai](https://pollinations.ai/badges/made_with_pollinations_cyan.svg)](https://pollinations.ai)
+[![Made with pollinations.ai](https://raw.githubusercontent.com/pollinations/pollinations/main/packages/ui/src/brand/badge-made-with.svg)](https://pollinations.ai/?ref=badge)
 
 **Live App:** [https://lekezoa.github.io/lens-learn-ai/](https://lekezoa.github.io/lens-learn-ai/)
 
