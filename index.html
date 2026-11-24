@@ -480,14 +480,24 @@ Keep it engaging, accessible, and grounded directly in what is visible.`;
 
     async function generateSpokenAudio(shortSummary, apiKey) {
       try {
-        const audioUrl = `https://gen.pollinations.ai/v1/audio/speech`;
-        // Or direct Pollinations Audio URL
         const audioSec = document.getElementById('audioSection');
         const player = document.getElementById('audioPlayer');
-        // Simple direct Pollinations TTS stream:
-        const ttsUrl = `https://text.pollinations.ai/${encodeURIComponent(shortSummary)}?model=openai&voice=alloy`;
-        player.src = ttsUrl;
-        audioSec.style.display = 'flex';
+        const headers = { "Content-Type": "application/json" };
+        if (apiKey) headers["Authorization"] = `Bearer ${apiKey}`;
+        const res = await fetch("https://gen.pollinations.ai/v1/audio/speech", {
+          method: "POST",
+          headers: headers,
+          body: JSON.stringify({
+            model: "openai/tts-1",
+            input: shortSummary,
+            voice: "alloy"
+          })
+        });
+        if (res.ok) {
+          const blob = await res.blob();
+          player.src = URL.createObjectURL(blob);
+          audioSec.style.display = 'flex';
+        }
       } catch (e) {
         console.warn("Audio speech skipped:", e);
       }

@@ -25,5 +25,9 @@ Inspired by Outcrop, **LensLearn AI** turns any smartphone camera or desktop web
   - ⚙️ **Machinery & Objects:** Mechanical components and function explanation.
 - **Audio Narration:** Built-in speech feedback powered by Pollinations voice endpoints.
 
+## 🤖 Models Used
+- **Multimodal Visual Analysis:** `openai/gpt-5.4-nano` (free tier, `paid_only: false`, multimodal text + image analysis via `gen.pollinations.ai`).
+- **Speech Audio Feedback:** `openai/tts-1` (`paid_only: false`, via `gen.pollinations.ai/v1/audio/speech`).
+
 ---
 Built with ❤️ for [Pollinations.ai](https://pollinations.ai).
